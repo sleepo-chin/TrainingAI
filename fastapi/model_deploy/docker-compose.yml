@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  test_api:
+    container_name: test_api
+    build: python/
+    restart: always
+
+    networks:
+      - default
+      
+    ports:
+      - 7001:80
+      
+networks:
+  default:
+    external:
+      name: basic_model_network
